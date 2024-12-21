@@ -6,10 +6,27 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import MainLayout from './Layout/MainLayout';
+import AllRooms from './pages/AllRooms';
+import MyBookingRoom from './pages/MyBookingRoom';
+import Home from './pages/Home';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    children:[
+      {
+        path:"/",
+        element:<Home></Home>
+      },
+      {
+        path:"all-rooms",
+        element:<AllRooms></AllRooms>
+      },
+      {
+        path:"my-booking-room",
+        element:<MyBookingRoom></MyBookingRoom>
+      },
+    ]
   },
 ]);
 
