@@ -9,6 +9,9 @@ import MainLayout from './Layout/MainLayout';
 import AllRooms from './pages/AllRooms';
 import MyBookingRoom from './pages/MyBookingRoom';
 import Home from './pages/Home';
+import AuthProvider from './provider/AuthProvider';
+import Register from './pages/Register';
+import { ToastContainer } from 'react-toastify';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +29,10 @@ const router = createBrowserRouter([
         path:"my-booking-room",
         element:<MyBookingRoom></MyBookingRoom>
       },
+      {
+        path:"register",
+        element:<Register></Register>
+      },
     ]
   },
 ]);
@@ -33,6 +40,20 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <AuthProvider>
+    <ToastContainer
+      position="top-center"
+      autoClose={3000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+    />
     <RouterProvider router={router} />
+    </AuthProvider>
     </StrictMode>,
 )
