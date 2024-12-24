@@ -1,21 +1,22 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import image1 from "../assets/images/b1.jpg";
+import image2 from "../assets/images/b2.jpg";
+import image3 from "../assets/images/b3.jpg";
+import image4 from "../assets/images/b4.jpg";
 
 const Slider = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-    const images = [
-        'https://i.ibb.co/1JCPGK5/Room-Image1.jpg',
-        'https://i.ibb.co/mbynPCb/Room-Image2.jpg',
-        'https://i.ibb.co/cQNfKQf/room-Image3.jpg',
-        'https://i.ibb.co/tJPR2sx/Room-Image4.jpg'
-    ];
+
+    // Add local images to the array
+    const images = [image1, image2, image3, image4];
 
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
         }, 3000); // Change the image every 3 seconds
         return () => clearInterval(interval);
-    }, [images.length]);
+    }, [images.length])
 
     return (
         <div className="relative">

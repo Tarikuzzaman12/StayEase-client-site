@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { FaUserCircle } from "react-icons/fa";
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navber = () => {
+    const { user, signOutUser } = useContext(AuthContext);
+
+    const handleSignout = () => {
+        signOutUser()
+            .then(() => {
+                console.log("User signed out successfully");
+            })
+            .catch((error) => {
+                console.error("Sign-out failed:", error.message);
+            });
+    };
     const links = <>
         <li><Link to="/">Home</Link></li>
         <li> <Link to="all-rooms">All Rooms</Link></li>
         <li><Link to="my-booking-room">My Bookings Room</Link></li>
-          </>
+    </>
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -43,7 +56,27 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">login</a>
+                <Link className="text-[20px] flex items-center gap-1 mr-3 hover:text-blue-500 transition-colors duration-300">
+                    {user && user.photoURL ? (
+                        <img
+                            src={user.photoURL}
+                            alt="User Profile"
+                            className="w-10 h-10  rounded-full  md:w-12 md:h-12 lg:w-12 lg:h-12"
+                        />
+                    ) : (
+                        <FaUserCircle className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" />
+                    )}
+                </Link>
+
+                {user ? (
+                    <button onClick={handleSignout} className="btn">
+                        Log Out
+                    </button>
+                ) : (
+                    <Link to="/login" className="btn">
+                        Login
+                    </Link>
+                )}
             </div>
         </div>
     );

@@ -1,10 +1,13 @@
 import React from 'react';
 import Slider from '../components/Slider';
+import FeaturesRooms from '../components/FeaturesRooms';
 
 const Home = () => {
     return (
         <div>
-            <Slider></Slider>        </div>
+            <Slider></Slider>
+            <FeaturesRooms></FeaturesRooms>
+        </div>
     );
 };
 
