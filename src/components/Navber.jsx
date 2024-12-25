@@ -17,7 +17,7 @@ const Navber = () => {
     };
     const links = <>
         <li><Link to="/">Home</Link></li>
-        <li> <Link to="all-rooms">All Rooms</Link></li>
+        <li> <Link to="rooms">All Rooms</Link></li>
         <li><Link to="my-booking-room">My Bookings Room</Link></li>
     </>
     return (

@@ -13,6 +13,7 @@ import AuthProvider from "./provider/AuthProvider";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import { ToastContainer } from "react-toastify";
+import RoomDetails from "./components/RoomDetails";
 
 const router = createBrowserRouter([
   {
@@ -24,8 +25,13 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "all-rooms",
+        path: "rooms",
         element: <AllRooms></AllRooms>,
+      },
+      {
+        path: "/rooms/:id",
+        element: <RoomDetails></RoomDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/rooms/${params.id}`)
       },
       {
         path: "my-booking-room",
@@ -61,4 +67,4 @@ createRoot(document.getElementById("root")).render(
       />
     </AuthProvider>
   </StrictMode>
-);
+  )
