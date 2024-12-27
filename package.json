@@ -23,6 +23,7 @@
     "react-modal": "^3.16.3",
     "react-router-dom": "^7.1.0",
     "react-simple-maps": "^3.0.0",
+    "react-stars": "^2.2.5",
     "react-toastify": "^11.0.2",
     "sort-by": "^1.2.0"
   },

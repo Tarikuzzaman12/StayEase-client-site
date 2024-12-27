@@ -48,7 +48,7 @@ const Slider = () => {
                 <button
                     className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg"
                 >
-                    <Link to="all-rooms">Explore Rooms</Link>
+                    <Link to="/rooms">Explore Rooms</Link>
                 </button>
             </div>
 
