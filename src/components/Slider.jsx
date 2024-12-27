@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import React ,{ useEffect, useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import image1 from "../assets/images/b1.jpg";
 import image2 from "../assets/images/b2.jpg";

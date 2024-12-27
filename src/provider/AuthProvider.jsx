@@ -1,3 +1,5 @@
+
+import React from "react";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase/firebaseConfig";
 import {
@@ -69,7 +71,7 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={authInfo}>
-      {loading ? <div>Loading...</div> : children}
+      {children}
     </AuthContext.Provider>
   );
 };

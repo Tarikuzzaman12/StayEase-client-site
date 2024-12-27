@@ -1,3 +1,4 @@
+import React from "react"; // Add this line
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
@@ -5,8 +6,8 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import MainLayout from "./Layout/MainLayout";
 import AllRooms from "./pages/AllRooms";
+import MainLayout from "./Layout/MainLayout";
 import MyBookingRoom from "./pages/MyBookingRoom";
 import Home from "./pages/Home";
 import AuthProvider from "./provider/AuthProvider";
@@ -16,6 +17,7 @@ import { ToastContainer } from "react-toastify";
 import RoomDetails from "./components/RoomDetails";
 import Error from "./components/Error";
 import PrivateRoutes from "./routes/PrivateRoutes";
+import BookNow from "./components/BookNow";
 
 const router = createBrowserRouter([
   {
@@ -33,12 +35,40 @@ const router = createBrowserRouter([
       },
       {
         path: "/rooms/:id",
-        element: <PrivateRoutes><RoomDetails></RoomDetails></PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:5000/rooms/${params.id}`)
+        element: (
+          <PrivateRoutes>
+            <RoomDetails></RoomDetails>
+          </PrivateRoutes>
+        )},
+        {
+          path: "/rooms/:id",
+          element: <PrivateRoutes><RoomDetails /></PrivateRoutes>,
+        }
+        
+        ,
+          {
+          path: "/rooms/:id",
+          element: <PrivateRoutes><RoomDetails/></PrivateRoutes>,
+          loader: ({ params }) => {
+             fetch(`http://localhost:5000/rooms/${params.id}`);
+         
+        },
+        },
+      {
+        path: "/book-now/:id",
+        element: (
+          <PrivateRoutes>
+            <BookNow></BookNow>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "my-booking-room",
-        element:<PrivateRoutes> <MyBookingRoom></MyBookingRoom></PrivateRoutes>,
+        element: (
+          <PrivateRoutes>
+            <MyBookingRoom></MyBookingRoom>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "login",
@@ -70,4 +100,4 @@ createRoot(document.getElementById("root")).render(
       />
     </AuthProvider>
   </StrictMode>
-  )
+);

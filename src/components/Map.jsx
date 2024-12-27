@@ -1,28 +1,20 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
+import React from "react";
 
 const Map = () => {
-  // Coordinates of the location you want to show on the map
-  const position = [23.8103, 90.4125]; // Latitude, Longitude
-
   return (
-    <div>
-      <h1 className="text-center mb-5 text-3xl font-bold ">Our Hotel{`'`}s Location</h1>
-       <div className=" rounded-xl overflow-hidden">
-      <div style={{ height: "400px" }} className="rounded-xl">
-        <MapContainer center={position} zoom={11} className="h-full w-full">
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker position={position}>
-            <Popup>
-           <p className="text-xl text-orange-700">   StayEase Hotel</p>
-            </Popup>
-          </Marker>
-        </MapContainer>
+    <div className="flex justify-center items-center bg-red-500 py-10">
+      <div className="rounded-xl shadow-lg overflow-hidden">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8462.189591586932!2d90.387200604544!3d23.76143524814073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8a6f07c2ded%3A0xba952f3052ca5c0a!2sFarmgate!5e0!3m2!1sen!2sbd!4v1735233136355!5m2!1sen!2sbd"
+          width="600"
+          height="450"
+          className="border-0 w-full h-full"
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </div>
-   </div>
   );
 };
 
