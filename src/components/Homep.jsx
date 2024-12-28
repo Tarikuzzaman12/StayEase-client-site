@@ -17,8 +17,8 @@ const Homep = () => {
     }, []);
 
     return (
-        <div className="reviews-section">
-            <h2 className="text-3xl text-center p-14 font-bold">User reviews</h2>
+        <div>
+            <div className="reviews-section">
             {reviews.length > 0 ? (
                 <ul>
                     {reviews.map((review) => (
@@ -54,6 +54,7 @@ const Homep = () => {
             ) : (
                 <p>Loading reviews...</p>
             )}
+        </div>
         </div>
     );
 };
