@@ -1,62 +1,61 @@
-import React, { useContext } from 'react';
-import { useEffect, useState } from "react";
-import { AuthContext } from '../provider/AuthProvider';
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Homep = () => {
-    const { user } = useContext(AuthContext)
-    const [reviews, setreviews] = useState([]);
+  const { user } = useContext(AuthContext);
+  const [reviews, setReviews] = useState([]);
 
-    // API কল করে ডেটা ফেচ করার জন্য useEffect ব্যবহার
-    useEffect(() => {
-        fetch("http://localhost:5000/reviews") // ব্যাকএন্ডের API রুট
-            .then((res) => res.json())
-            .then((data) => {
-                setreviews(data); // ডেটা স্টেটে সেট করুন
-            })
-            .catch((error) => console.error("Error fetching reviews:", error));
-    }, []);
+  // API call to fetch data
+  useEffect(() => {
+    fetch("http://localhost:5000/reviews") // Backend API route
+      .then((res) => res.json())
+      .then((data) => {
+        setReviews(data); // Set data to state
+      })
+      .catch((error) => console.error("Error fetching reviews:", error));
+  }, []);
 
-    return (
-        <div>
-            <div className="reviews-section">
-            {reviews.length > 0 ? (
-                <ul>
-                    {reviews.map((review) => (
-                        <div key={review._id} className="card bg-base-100  border-2">
-                            <figure>
-                                <img
-                                    className='h-24 w-24 rounded-full p-3'
-                                    src={user?.photoURL}
-                                    alt="Shoes" />
-                            </figure>
-                            <div className="card-body">
-                                <h2 className="card-title">{review.
-                                    username}</h2>
-                                <p>Rating :{review.rating}</p>
-                                <p>Comment :{review.comment}</p>
-                                <p>
-                                    Time: {new Date(review.timestamp).toLocaleString("en-US", {
-                                        month: "numeric",
-                                        day: "numeric",
-                                        year: "numeric",
-                                        hour: "numeric",
-                                        minute: "numeric",
-                                        second: "numeric",
-                                        hour12: true,
-                                    })}
-                                </p>
-
-
-                            </div>
-                        </div>
-                    ))}
-                </ul>
-            ) : (
-                <p>Loading reviews...</p>
-            )}
-        </div>
-        </div>
-    );
+  return (
+   <div>
+    <h2 className="text-center text-4xl font-semibold mb-6">Users Reviews</h2>
+     <div className="w-8/12 mx-auto p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {reviews.length > 0 ? (
+          reviews.map((review) => (
+            <div key={review._id} className="bg-base-100 border-2 shadow-lg p-4 rounded-md">
+              <figure className="flex justify-center">
+                <img
+                  className="h-24 w-24 rounded-full"
+                  src={user?.photoURL || "https://via.placeholder.com/150"}
+                  alt={review.username}
+                />
+              </figure>
+              <div className="card-body text-center">
+                <h2 className="card-title font-bold">{review.username}</h2>
+                <p className="text-sm">Rating: {review.rating}</p>
+                <p className="text-sm">Comment: {review.comment}</p>
+                <p className="text-xs text-gray-500">
+                  Time:{" "}
+                  {new Date(review.timestamp).toLocaleString("en-US", {
+                    month: "numeric",
+                    day: "numeric",
+                    year: "numeric",
+                    hour: "numeric",
+                    minute: "numeric",
+                    second: "numeric",
+                    hour12: true,
+                  })}
+                </p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>Loading reviews...</p>
+        )}
+      </div>
+    </div>
+   </div>
+  );
 };
 
 export default Homep;

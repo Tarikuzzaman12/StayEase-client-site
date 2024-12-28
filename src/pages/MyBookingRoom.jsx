@@ -13,16 +13,30 @@ const MyBookingRoom = () => {
   const [formData, setFormData] = useState({ bookingDate: "" }); // Data for editing
   const [reviewBooking, setReviewBooking] = useState(null); // Booking for review
   const [reviewData, setReviewData] = useState({ rating: 0, comment: "" }); // Review data
-
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/bookings?user=${user.email}`)
-        .then((response) => response.json())
-        .then((data) => setBookings(data)) // Set the bookings data from the backend
+      console.log("Fetching bookings for email:", user.email); // Debugging log
+      fetch(`http://localhost:5000/bookings?email=${user.email}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch bookings");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Filter bookings based on user.email if needed
+          const filteredBookings = data.filter(
+            (booking) => booking.userEmail === user.email
+          );
+          console.log("Filtered Bookings:", filteredBookings); // Debugging line
+          setBookings(filteredBookings); // Set the filtered bookings data
+        })
         .catch((error) => console.error("Error fetching bookings:", error));
     }
-  }, [user]);
-
+  }, [user]); // Runs whenever 'user' changes
+  
+  
+  
   // Handle update booking date
   const handleUpdateSubmit = () => {
     if (editBooking) {

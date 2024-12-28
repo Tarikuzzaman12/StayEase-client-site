@@ -26,7 +26,7 @@ const Home = () => {
       </div>
       <ExtraSection1 />
       <ExtraSection2 />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto w-8/12 pb-6">
+      <div>
         <Homep />
       </div>
 
