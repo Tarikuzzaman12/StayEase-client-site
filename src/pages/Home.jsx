@@ -6,6 +6,8 @@ import ExtraSection1 from "../components/ExtraSection1";
 import ExtraSection2 from "../components/ExtraSection2";
 import Homep from "../components/Homep";
 import OfferModal from "../components/OfferModal";
+import Nearby from "../components/Nearby";
+import Dining from "../components/Dining";
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,6 +28,8 @@ const Home = () => {
       </div>
       <ExtraSection1 />
       <ExtraSection2 />
+      <Nearby></Nearby>
+      <Dining></Dining>
       <div>
         <Homep />
       </div>
