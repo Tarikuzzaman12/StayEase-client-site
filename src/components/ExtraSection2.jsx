@@ -6,7 +6,7 @@ const ExtraSection2 = () => {
   // State to track sort order
 
     useEffect(() => {
-        fetch('http://localhost:5000/rooms')
+        fetch('https://stay-ease-server-site.vercel.app/rooms')
             .then((res) => res.json())
             .then((data) => {
                 setRooms(data);

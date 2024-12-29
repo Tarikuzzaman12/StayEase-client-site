@@ -7,7 +7,7 @@ const FeaturesRooms = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/rooms')
+        fetch('https://stay-ease-server-site.vercel.app/rooms')
 
             .then((res) => res.json())
             .then((data) => {

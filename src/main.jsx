@@ -51,7 +51,7 @@ const router = createBrowserRouter([
           path: "/rooms/:id",
           element: <PrivateRoutes><RoomDetails/></PrivateRoutes>,
           loader: ({ params }) => {
-             fetch(`http://localhost:5000/rooms/${params.id}`);
+             fetch(`https://stay-ease-server-site.vercel.app/rooms/${params.id}`);
          
         },
         },

@@ -11,7 +11,7 @@ const AllRooms = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/rooms')
+        fetch('https://stay-ease-server-site.vercel.app/rooms')
             .then((res) => {
                 if (!res.ok) throw new Error('Failed to fetch rooms');
                 return res.json();

@@ -21,7 +21,7 @@ const BookNow = ({ room, isOpen, onClose }) => {
     }
   
     // Fetch existing bookings for the user
-    fetch(`http://localhost:5000/bookings?userEmail=${user?.email}`)
+    fetch(`https://stay-ease-server-site.vercel.app/bookings?userEmail=${user?.email}`)
       .then((res) => res.json())
       .then((bookings) => {
         // Check if the current room is already booked
@@ -46,7 +46,7 @@ const BookNow = ({ room, isOpen, onClose }) => {
   
         console.log("Booking Data:", bookingData);
   
-        fetch("http://localhost:5000/bookings", {
+        fetch("https://stay-ease-server-site.vercel.app/bookings", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(bookingData),

@@ -17,7 +17,7 @@ const MyBookingRoom = () => {
   useEffect(() => {
     if (user?.email) {
       console.log("Fetching bookings for email:", user.email); // Debugging log
-      fetch(`http://localhost:5000/bookings?email=${user.email}`)
+      fetch(`https://stay-ease-server-site.vercel.app/bookings?email=${user.email}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Failed to fetch bookings");
@@ -45,7 +45,7 @@ const MyBookingRoom = () => {
   
       console.log('Updated Booking:', updatedBooking);  // Debugging line
       
-      fetch(`http://localhost:5000/bookings/${editBooking._id}`, {
+      fetch(`https://stay-ease-server-site.vercel.app/bookings/${editBooking._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedBooking),
@@ -82,7 +82,7 @@ const MyBookingRoom = () => {
         roomId: reviewBooking.roomId,
       };
 
-      fetch(`http://localhost:5000/reviews`, {
+      fetch(`https://stay-ease-server-site.vercel.app/reviews`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(review),

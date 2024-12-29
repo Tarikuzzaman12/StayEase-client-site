@@ -7,7 +7,7 @@
 
 //   // API call to fetch data
 //   useEffect(() => {
-//     fetch("http://localhost:5000/reviews") // Backend API route
+//     fetch("https://stay-ease-server-site.vercel.app/reviews") // Backend API route
 //       .then((res) => res.json())
 //       .then((data) => {
 //         setReviews(data); // Set data to state
@@ -76,7 +76,7 @@ const Homep = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch("http://localhost:5000/reviews"); // Replace with your backend URL
+        const response = await fetch("https://stay-ease-server-site.vercel.app/reviews"); // Replace with your backend URL
         if (!response.ok) {
           throw new Error("Failed to fetch reviews");
         }

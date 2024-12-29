@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const DeleteBookingModal = ({ deleteId, setDeleteId, bookings, setBookings }) => {
   const handleDelete = () => {
     if (deleteId) {
-      fetch(`http://localhost:5000/bookings/${deleteId}`, {
+      fetch(`https://stay-ease-server-site.vercel.app/bookings/${deleteId}`, {
         method: "DELETE",
       })
         .then((response) => response.json())
