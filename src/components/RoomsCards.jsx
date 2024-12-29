@@ -12,17 +12,11 @@ const RoomsCards = ({ room }) => {
                         className="h-64 w-full object-cover"
                     />
                 </figure>
-                <div className="card-body h-[400px]">
+                <div className="card-body h-[340px]">
                     <h2 className="text-2xl font-bold">{title}</h2>
                     <p className="text-lg text-gray-500 font-medium">Room Size: {roomSize}</p>
                     <p className="text-lg text-gray-500 font-medium">
                         Price Per Night: <span className="text-gray-900 font-semibold">${pricePerNight}</span>
-                    </p>
-                    <p className={`text-lg font-bold ${availability === "Yes" ? "text-green-500" : "text-red-500"}`}>
-                        Availability: {availability}
-                    </p>
-                    <p className="text-lg text-gray-500 font-medium">
-                        Reviews: {reviews.length > 0 ? reviews.length : "No reviews yet"}
                     </p>
                     <p className="text-sm text-gray-700">{description}</p>
                     <div className="card-actions mt-4">

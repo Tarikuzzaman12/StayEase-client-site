@@ -1,6 +1,9 @@
 import React from "react";
 
 const ModalUpdate = ({ editBooking, setEditBooking, formData, setFormData, handleUpdateSubmit }) => {
+  // Get the current date in the format YYYY-MM-DD
+  const today = new Date().toISOString().split("T")[0];
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-6 rounded-lg shadow-lg w-96">
@@ -12,6 +15,7 @@ const ModalUpdate = ({ editBooking, setEditBooking, formData, setFormData, handl
             type="date"
             className="input input-bordered w-full"
             value={formData.bookingDate}
+            min={today} // Prevent selecting past dates
             onChange={(e) =>
               setFormData((prev) => ({ ...prev, bookingDate: e.target.value }))
             }

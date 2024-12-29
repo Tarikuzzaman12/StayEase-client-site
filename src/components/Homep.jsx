@@ -108,18 +108,18 @@ const Homep = () => {
         {reviews.map((review) => (
           <SwiperSlide key={review._id}>
             <div className="bg-white p-6 rounded-md shadow-lg text-center">
-              {/* User's Photo */}
-              <div className="flex justify-center mb-4">
-                <img
-                  src={user?.photoURL || "https://via.placeholder.com/150"} // Default placeholder if no photo
-                  alt={review.userName}
-                  className="w-16 h-16 rounded-full"
-                />
-              </div>
               {/* User's Name */}
               <h3 className="text-xl font-semibold">{review.username}</h3>
               <p className="text-gray-500 text-sm">
-                {new Date(review.timestamp).toLocaleDateString()}
+              {new Date(review.timestamp).toLocaleString("en-US", {
+                        month: "numeric",
+                        day: "numeric",
+                        year: "numeric",
+                        hour: "numeric",
+                        minute: "numeric",
+                        second: "numeric",
+                        hour12: true,
+                      })}
               </p>
               {/* Review Comment */}
               <p className="mt-4 text-gray-700">{review.comment}</p>

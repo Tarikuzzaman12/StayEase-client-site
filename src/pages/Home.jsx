@@ -28,16 +28,16 @@ const Home = () => {
       <div>
       <Slider />
       <FeaturesRooms />
-      <div className="my-[100px] w-11/12 mx-auto">
-        <Map />
-      </div>
-      <ExtraSection1 />
-      <ExtraSection2 />
       <Nearby></Nearby>
       <Dining></Dining>
+      <ExtraSection1 />
+      <ExtraSection2 /> 
       <div>
         <Homep />
       </div>
+      <div className="my-[100px] w-11/12 mx-auto">
+      <Map />
+        </div>
 
       {/* Offer Modal */}
       <OfferModal isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} />

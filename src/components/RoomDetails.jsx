@@ -112,47 +112,46 @@ const RoomDetails = () => {
 
       {/* Reviews Section */}
       <div>
-        <h2 className="text-center text-4xl font-semibold mt-8 mb-6">User Reviews For this Room</h2>
-        <div className="w-8/12 mx-auto p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reviews.length > 0 ? (
-              reviews.map((review) => (
-                <div
-                  key={review._id}
-                  className="bg-base-100 border-2 shadow-lg p-4 rounded-md"
-                >
-                  <figure className="flex justify-center">
-                    <img
-                      className="h-24 w-24 rounded-full"
-                      src={user?.photoURL || "https://via.placeholder.com/150"}
-                      alt={review.username}
-                    />
-                  </figure>
-                  <div className="card-body text-center">
-                    <h2 className="card-title font-bold">{review.username}</h2>
-                    <p className="text-sm">Rating: {review.rating}</p>
-                    <p className="text-sm">Comment: {review.comment}</p>
-                    <p className="text-xs text-gray-500">
-                      Time:{" "}
-                      {new Date(review.timestamp).toLocaleString("en-US", {
-                        month: "numeric",
-                        day: "numeric",
-                        year: "numeric",
-                        hour: "numeric",
-                        minute: "numeric",
-                        second: "numeric",
-                        hour12: true,
-                      })}
-                    </p>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p>No reviews available for this room.</p>
-            )}
-          </div>
-        </div>
-      </div>
+  <h2 className="text-center text-4xl font-semibold mt-8 mb-6">
+    User Reviews For this Room
+  </h2>
+  <div className="w-8/12 mx-auto p-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {reviews.length > 0 ? (
+        // Sort reviews in descending order by timestamp
+        reviews
+          .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+          .map((review) => (
+            <div
+              key={review._id}
+              className="bg-base-100 border-2 shadow-lg p-4 rounded-md"
+            >
+              <div className="card-body text-center">
+                <h2 className="card-title font-bold">{review.username}</h2>
+                <p className="text-sm">Rating: {review.rating}</p>
+                <p className="text-sm">Comment: {review.comment}</p>
+                <p className="text-xs text-gray-500">
+                  Time:{" "}
+                  {new Date(review.timestamp).toLocaleString("en-US", {
+                    month: "numeric",
+                    day: "numeric",
+                    year: "numeric",
+                    hour: "numeric",
+                    minute: "numeric",
+                    second: "numeric",
+                    hour12: true,
+                  })}
+                </p>
+              </div>
+            </div>
+          ))
+      ) : (
+        <p>No reviews available for this room.</p>
+      )}
+    </div>
+  </div>
+</div>
+
 
       {/* Book Now Modal */}
       <BookNow
