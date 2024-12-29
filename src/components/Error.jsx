@@ -1,9 +1,14 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const Error = () => {
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+      <div>
+        <Helmet>
+            <title>StayEase | Error</title>
+        </Helmet>
+          <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
         <h1 className="text-6xl font-bold text-red-500 mb-4">404</h1>
         <h2 className="text-2xl font-semibold text-gray-700 mb-6">
             Oops! Page Not Found
@@ -18,6 +23,7 @@ const Error = () => {
             Go Back to Home
         </Link>
     </div>
+      </div>
  );
 };
 

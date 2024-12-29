@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import BookNow from "./BookNow";
 import { AuthContext } from "../provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const RoomDetails = () => {
   const { id } = useParams(); // Get room ID from URL
@@ -54,7 +55,11 @@ const RoomDetails = () => {
   if (!room) return <p className="text-center">Room not found</p>;
 
   return (
-    <div className="p-6 container mx-auto">
+  <div>
+    <Helmet>
+      <title>StayEase | Details</title>
+    </Helmet>
+      <div className="p-6 container mx-auto">
       <div className="flex flex-col lg:flex-row gap-8 items-start">
         {/* Room Image */}
         <div className="lg:w-1/2">
@@ -156,6 +161,7 @@ const RoomDetails = () => {
         onClose={() => setIsModalOpen(false)}
       />
     </div>
+  </div>
   );
 };
 

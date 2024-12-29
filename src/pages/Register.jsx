@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createNewUser, googleSignIn, setUser, updateUserProfile } =
@@ -53,7 +54,11 @@ const Register = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen py-7">
+    <div>
+      <Helmet>
+        <title>StayEase | Register</title>
+      </Helmet>
+      <div className="hero bg-base-200 min-h-screen py-7">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
         <form onSubmit={handleRegister} className="card-body">
           <h1 className="text-5xl font-bold">Register now!</h1>
@@ -134,6 +139,7 @@ const Register = () => {
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 };

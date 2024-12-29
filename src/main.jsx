@@ -18,6 +18,7 @@ import RoomDetails from "./components/RoomDetails";
 import Error from "./components/Error";
 import PrivateRoutes from "./routes/PrivateRoutes";
 import BookNow from "./components/BookNow";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
@@ -85,7 +86,10 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
+      <HelmetProvider>
       <RouterProvider router={router} />
+
+      </HelmetProvider>
       <ToastContainer
         position="top-center"
         autoClose={3000}

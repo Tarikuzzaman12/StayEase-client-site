@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import RoomsCards from '../components/RoomsCards';
+import { Helmet } from 'react-helmet-async';
 
 const AllRooms = () => {
     const [rooms, setRooms] = useState([]);
@@ -50,6 +51,10 @@ const AllRooms = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>StayEase | All Books</title>
+            </Helmet>
+            <div>
             <h2 className="text-4xl text-center font-bold mt-10">All Rooms</h2>
 
             {loading && <p className="text-center text-lg mt-5">Loading...</p>}
@@ -133,6 +138,7 @@ const AllRooms = () => {
                     </div>
                 </>
             )}
+        </div>
         </div>
     );
 };

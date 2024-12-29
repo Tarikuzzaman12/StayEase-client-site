@@ -8,6 +8,7 @@ import Homep from "../components/Homep";
 import OfferModal from "../components/OfferModal";
 import Nearby from "../components/Nearby";
 import Dining from "../components/Dining";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,6 +22,10 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>StayEase | Home</title>
+      </Helmet>
+      <div>
       <Slider />
       <FeaturesRooms />
       <div className="my-[100px] w-11/12 mx-auto">
@@ -37,6 +42,8 @@ const Home = () => {
       {/* Offer Modal */}
       <OfferModal isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} />
     </div>
+    </div>
+    
   );
 };
 

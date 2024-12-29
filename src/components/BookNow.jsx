@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 Modal.setAppElement("#root");
 
@@ -74,7 +75,11 @@ const BookNow = ({ room, isOpen, onClose }) => {
   
 
   return (
-    <Modal
+  <div>
+    <Helmet>
+      <title>StayEase | Book-Now</title>
+    </Helmet>
+      <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
       contentLabel="Book Room"
@@ -116,6 +121,7 @@ const BookNow = ({ room, isOpen, onClose }) => {
         </button>
       </div>
     </Modal>
+  </div>
   );
 };
 

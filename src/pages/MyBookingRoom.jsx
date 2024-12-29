@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import ModalUpdate from "../components/ModalUpate";
 import DeleteBookingModal from "../components/DeleteBookingModal";
 import ReviewBookingModal from "../components/ReviewBookingModal";
+import { Helmet } from "react-helmet-async";
 
 const MyBookingRoom = () => {
   const { user } = useContext(AuthContext); // Get user info from AuthContext
@@ -106,7 +107,11 @@ const MyBookingRoom = () => {
   };
 
   return (
-    <div className="container mx-auto p-8">
+    <div>
+      <Helmet>
+        <title>StayEase | Booking-Rooms</title>
+      </Helmet>
+      <div className="container mx-auto p-8">
       <h1 className="text-3xl text-center font-bold mb-10">My Bookings</h1>
       {bookings.length === 0 ? (
         <p>No bookings found.</p>
@@ -176,6 +181,7 @@ const MyBookingRoom = () => {
           user={user}
         />
       )}
+    </div>
     </div>
   );
 };

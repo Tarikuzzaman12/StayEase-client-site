@@ -10,16 +10,16 @@ const DeleteBookingModal = ({ deleteId, setDeleteId, bookings, setBookings }) =>
         .then((response) => response.json())
         .then((data) => {
           if (data.success) {
-            toast.success("Booking deleted successfully!");
+            toast.success("Booking canceled successfully!");
             setBookings(bookings.filter((booking) => booking._id !== deleteId));
             setDeleteId(null); // Reset delete ID
           } else {
-            toast.error("Failed to delete booking.");
+            toast.error(data.message || "Failed to cancel booking.");
           }
         })
         .catch((error) => {
-          console.error("Error deleting booking:", error);
-          toast.error("An error occurred while deleting the booking.");
+          console.error("Error canceling booking:", error);
+          toast.error("An error occurred while canceling the booking.");
         });
     }
   };
@@ -27,7 +27,8 @@ const DeleteBookingModal = ({ deleteId, setDeleteId, bookings, setBookings }) =>
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h3 className="text-lg font-semibold mb-4">Are you sure you want to delete this booking?</h3>
+        <h3 className="text-lg font-semibold mb-4">Are you sure you want to cancel this booking?</h3>
+        <p className="text-sm text-gray-600">Cancellation policy: You can cancel a booking only 1 day before the booked date.</p>
         <div className="mt-4 flex justify-end space-x-2">
           <button
             className="btn btn-secondary"
@@ -36,7 +37,7 @@ const DeleteBookingModal = ({ deleteId, setDeleteId, bookings, setBookings }) =>
             Cancel
           </button>
           <button className="btn btn-danger" onClick={handleDelete}>
-            Confirm Delete
+            Confirm Cancel
           </button>
         </div>
       </div>
