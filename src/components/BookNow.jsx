@@ -19,38 +19,57 @@ const BookNow = ({ room, isOpen, onClose }) => {
       return;
     }
   
-    const bookingData = {
-      roomId: room._id,
-      roomTitle: room.title, // Add the room title
-      roomDescription: room.description, // Add the room description
-      offerPrice: room.specialOffer.offerPrice, // Add the offer price
-      bookingDate: selectedDate,
-      roomImage: room.image,
-      userName: user?.name || "Guest", // Use a fallback value for user name
-      userEmail: user?.email,
-    };
-  
-    console.log("Booking Data:", bookingData);
-  
-    fetch("http://localhost:5000/bookings", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(bookingData),
-    })
+    // Fetch existing bookings for the user
+    fetch(`http://localhost:5000/bookings?userEmail=${user?.email}`)
       .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          toast.success("Room booked successfully!");
-          onClose(); // Close the modal
-        } else {
-          toast.error(data.message || "Booking failed!");
+      .then((bookings) => {
+        // Check if the current room is already booked
+        const alreadyBooked = bookings.some((b) => b.roomId === room._id);
+  
+        if (alreadyBooked) {
+          toast.error("You have already booked this room!");
+          return;
         }
+  
+        // Proceed to make a booking
+        const bookingData = {
+          roomId: room._id,
+          roomTitle: room.title,
+          roomDescription: room.description,
+          offerPrice: room.specialOffer.offerPrice,
+          bookingDate: selectedDate,
+          roomImage: room.image,
+          userName: user?.name || "Guest",
+          userEmail: user?.email,
+        };
+  
+        console.log("Booking Data:", bookingData);
+  
+        fetch("http://localhost:5000/bookings", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(bookingData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.success) {
+              toast.success("Room booked successfully!");
+              onClose();
+            } else {
+              toast.error(data.message || "Booking failed!");
+            }
+          })
+          .catch((error) => {
+            console.error("Error booking the room:", error);
+            toast.error("An error occurred while booking the room.");
+          });
       })
       .catch((error) => {
-        console.error("Error booking the room:", error);
-        toast.error("An error occurred while booking the room.");
+        console.error("Error fetching bookings:", error);
+        toast.error("Failed to check existing bookings.");
       });
   };
+  
   
   
 
