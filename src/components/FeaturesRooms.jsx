@@ -34,7 +34,7 @@ const FeaturesRooms = () => {
     return (
         <div>
             <h2 className="text-4xl text-center font-bold mt-20">Featured Rooms</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 w-11/12 mx-auto p-8 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 w-full mx-auto p-8 gap-6">
                 {rooms?.map((room) => (
                     <RoomsCards key={room._id} room={room}></RoomsCards>
                 ))}

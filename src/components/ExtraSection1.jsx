@@ -4,13 +4,13 @@ const ExtraSection1 = () => {
     return (
         <div>
   <section className="bg-gray-50 py-10">
-  <div className="container mx-auto text-center">
+  <div className="w-full text-center">
     <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Premium Amenities</h2>
     <p className="text-gray-600 mb-10">
       Experience the best-in-class facilities designed to make your stay unforgettable.
       From relaxation to recreation, we’ve got it all covered.
     </p>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mx-auto w-11/12">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8  w-full  px-6">
       {[
         {
           icon: "📶",

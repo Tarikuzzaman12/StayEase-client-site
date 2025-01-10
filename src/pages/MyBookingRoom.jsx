@@ -114,7 +114,7 @@ const MyBookingRoom = () => {
       <div className="container mx-auto p-8">
       <h1 className="text-3xl text-center font-bold mb-10">My Bookings</h1>
       {bookings.length === 0 ? (
-        <p>No bookings found.</p>
+        <p className=" h-screen text-center items-center justify-center flex text-3xl font-bold">No bookings found.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {bookings.map((booking, index) => (

@@ -19,6 +19,8 @@ import Error from "./components/Error";
 import PrivateRoutes from "./routes/PrivateRoutes";
 import BookNow from "./components/BookNow";
 import { HelmetProvider } from "react-helmet-async";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -74,6 +76,14 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login></Login>,
+      },
+      {
+        path: "about",
+        element: <About></About>,
+      },
+      {
+        path: "contact",
+        element: <Contact></Contact>,
       },
       {
         path: "register",

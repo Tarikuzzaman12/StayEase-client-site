@@ -49,7 +49,8 @@ const RoomDetails = () => {
   }, [id]);
 
   // Show loader while data is loading
-  if (loading) return <p className="text-center">Loading...</p>;
+  if (loading) return <p className="text-center h-screen"><span className="loading loading-bars loading-lg"></span>
+</p>;
 
   // Show error message if room data is not found
   if (!room) return <p className="text-center">Room not found</p>;
@@ -118,7 +119,6 @@ const RoomDetails = () => {
           <div className="w-8/12 mx-auto p-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {reviews.length > 0 ? (
-                // Sort reviews in descending order by timestamp
                 reviews
                   .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
                   .map((review) => (
@@ -151,7 +151,6 @@ const RoomDetails = () => {
             </div>
           </div>
         </div>
-
 
         {/* Book Now Modal */}
         <BookNow
