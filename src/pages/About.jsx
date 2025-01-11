@@ -4,7 +4,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="bg-gradient-to-r from-green-100 via-white to-green-100 text-gray-800 py-12 px-6">
+    <div id='about' className="bg-gradient-to-r from-green-100 via-white to-green-100 text-gray-800 py-12 px-6">
       <div className="container mx-auto shadow-lg rounded-lg p-8 bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-blue-500">About StayEase</h2>
         <p className="text-lg md:text-xl leading-relaxed text-justify">

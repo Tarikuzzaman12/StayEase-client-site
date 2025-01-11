@@ -54,7 +54,7 @@ const AllRooms = () => {
             <Helmet>
                 <title>StayEase | All Rooms</title>
             </Helmet>
-            <div>
+            <div id='rooms'>
                 <h2 className="text-4xl text-center font-bold mt-10">All Rooms</h2>
 
                 {loading && (

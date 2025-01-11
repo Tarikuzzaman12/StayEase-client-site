@@ -4,7 +4,7 @@
 Stay-Ease is a modern hotel booking platform designed to provide users with a seamless experience for browsing and booking luxurious rooms. The frontend provides a responsive user interface that allows users to explore room listings, view detailed descriptions, check availability, read reviews, and make bookings.
 
 ## Live URL
-[StayEase](https://shaky-slip.surge.sh)
+[StayEase](https://stayease-pass-auth.web.app/)
 
 ## Key Features
 - **Responsive Design**: The platform is fully responsive and works seamlessly across devices, including desktops, tablets, and mobile phones.

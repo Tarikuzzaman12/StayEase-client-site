@@ -27,7 +27,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-100 via-white to-blue-100 py-12 px-6">
+    <div id="contact" className="bg-gradient-to-r from-blue-100 via-white to-blue-100 py-12 px-6">
       <div className="container mx-auto max-w-4xl bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-blue-700">
           Contact Us

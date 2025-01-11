@@ -6,23 +6,23 @@ const Footer = () => {
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Services Section */}
                 <nav>
-                    <h6 className="text-lg font-semibold mb-4">Services</h6>
+                    <h6 className="text-lg font-semibold mb-4">Our Services</h6>
                     <ul className="space-y-2">
-                        <li><a href="#" className="hover:text-gray-300">Branding</a></li>
-                        <li><a href="#" className="hover:text-gray-300">Design</a></li>
-                        <li><a href="#" className="hover:text-gray-300">Marketing</a></li>
-                        <li><a href="#" className="hover:text-gray-300">Advertisement</a></li>
+                        <li><a href="rooms" className="hover:text-gray-300">Hotel Rooms</a></li>
+                        <li><a href="#" className="hover:text-gray-300">Room Booking</a></li>
+                        <li><a href="#" className="hover:text-gray-300">Special Offers</a></li>
+                        <li><a href="#" className="hover:text-gray-300">Corporate Packages</a></li>
                     </ul>
                 </nav>
 
                 {/* Company Section */}
                 <nav>
-                    <h6 className="text-lg font-semibold mb-4">Company</h6>
+                    <h6 className="text-lg font-semibold mb-4">About StayEase</h6>
                     <ul className="space-y-2">
-                        <li><a href="#" className="hover:text-gray-300">About us</a></li>
-                        <li><a href="#" className="hover:text-gray-300">Contact</a></li>
-                        <li><a href="#" className="hover:text-gray-300">Jobs</a></li>
-                        <li><a href="#" className="hover:text-gray-300">Press kit</a></li>
+                        <li><a href="about" className="hover:text-gray-300">About Us</a></li>
+                        <li><a href="contact" className="hover:text-gray-300">Contact Us</a></li>
+                        <li><a href="#" className="hover:text-gray-300">Careers</a></li>
+                        <li><a href="#" className="hover:text-gray-300">Privacy Policy</a></li>
                     </ul>
                 </nav>
 
@@ -30,7 +30,7 @@ const Footer = () => {
                 <div>
                     <h6 className="text-lg font-semibold mb-4">Newsletter</h6>
                     <p className="text-sm mb-4 text-gray-400">
-                        Subscribe to get the latest updates and offers.
+                        Subscribe to receive exclusive deals, offers, and updates.
                     </p>
                     <form className="flex items-center space-x-2">
                         <input
@@ -48,7 +48,7 @@ const Footer = () => {
             {/* Footer Bottom */}
             <div className="border-t border-gray-700 mt-10 pt-4 text-center">
                 <p className="text-sm text-gray-400">
-                    &copy; {new Date().getFullYear()} Your Project Name. All rights reserved.
+                    &copy; {new Date().getFullYear()} StayEase. All rights reserved.
                 </p>
             </div>
         </footer>
