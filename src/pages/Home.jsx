@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
 
   useEffect(() => {
     // Show the modal automatically on load

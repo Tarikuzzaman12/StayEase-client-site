@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
-import { AuthContext } from '../provider/AuthProvider';
+import { AuthContext } from "../provider/AuthProvider";
 
-const Navbar = () => {
+const Navber = () => {
     const { user, signOutUser } = useContext(AuthContext);
+    const location = useLocation();
 
     const handleSignout = () => {
         signOutUser()
@@ -18,16 +19,65 @@ const Navbar = () => {
 
     const links = (
         <>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/rooms">All Rooms</Link></li>
-            <li><Link to="/my-booking-room">My Bookings</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li>
+                <Link
+                    to="/"
+                    className={`${
+                        location.pathname === "/" ? "text-orange-500 font-bold" : ""
+                    } hover:text-orange-500 transition-colors duration-300`}
+                >
+                    Home
+                </Link>
+            </li>
+            <li>
+                <Link
+                    to="/rooms"
+                    className={`${
+                        location.pathname === "/rooms" ? "text-orange-500 font-bold" : ""
+                    } hover:text-orange-500 transition-colors duration-300`}
+                >
+                    All Rooms
+                </Link>
+            </li>
+            {user && (
+                <li>
+                    <Link
+                        to="/my-booking-room"
+                        className={`${
+                            location.pathname === "/my-booking-room"
+                                ? "text-orange-500 font-bold"
+                                : ""
+                        } hover:text-orange-500 transition-colors duration-300`}
+                    >
+                        My Bookings Room
+                    </Link>
+                </li>
+            )}
+            <li>
+                <Link
+                    to="/about"
+                    className={`${
+                        location.pathname === "/about" ? "text-orange-500 font-bold" : ""
+                    } hover:text-orange-500 transition-colors duration-300`}
+                >
+                    About Us
+                </Link>
+            </li>
+            <li>
+                <Link
+                    to="/contact"
+                    className={`${
+                        location.pathname === "/contact" ? "text-orange-500 font-bold" : ""
+                    } hover:text-orange-500 transition-colors duration-300`}
+                >
+                    Contact
+                </Link>
+            </li>
         </>
     );
 
     return (
-        <div className="navbar container mx-auto sticky top-0 z-50 bg-primary text-white shadow-lg">
+        <div className="navbar bg-primary text-white px-4 lg:px-12 sticky top-0 z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,20 +98,20 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                        className="menu menu-sm dropdown-content bg-primary text-white rounded-box z-[1] mt-3 w-52 p-2 shadow"
                     >
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl font-bold">StayEase</a>
+                <Link to="/" className="btn btn-ghost normal-case text-xl font-bold">
+                    StayEase
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    {links}
-                </ul>
+                <ul className="menu menu-horizontal px-1">{links}</ul>
             </div>
-            <div className="navbar-end">
-                <Link className="text-[20px] flex items-center gap-1 mr-3 hover:text-blue-500 transition-colors duration-300">
+            <div className="navbar-end flex items-center">
+                <Link className="text-[20px] flex items-center gap-1 mr-3 hover:text-blue-300 transition-colors duration-300">
                     {user && user.photoURL ? (
                         <img
                             src={user.photoURL}
@@ -74,11 +124,11 @@ const Navbar = () => {
                 </Link>
 
                 {user ? (
-                    <button onClick={handleSignout} className="btn hover:bg-secondary transition-colors duration-300">
+                    <button onClick={handleSignout} className="btn btn-secondary">
                         Log Out
                     </button>
                 ) : (
-                    <Link to="/login" className="btn hover:bg-secondary transition-colors duration-300">
+                    <Link to="/login" className="btn btn-accent">
                         Login
                     </Link>
                 )}
@@ -87,4 +137,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Navber;

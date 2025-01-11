@@ -29,4 +29,14 @@
     background: rgba(0, 0, 0, 0.75);
     z-index: 1000;
   }
-  
+  /* Global CSS */
+.light-theme {
+  background-color: #1a202c;
+  color: #ffffff;
+}
+
+.dark-theme {
+
+  background-color: #ffffff;
+  color: #000000;
+}

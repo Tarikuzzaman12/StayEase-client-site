@@ -21,6 +21,7 @@ import BookNow from "./components/BookNow";
 import { HelmetProvider } from "react-helmet-async";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import { ThemeProvider } from "./provider/ThemeProvider";
 
 const router = createBrowserRouter([
   {
@@ -95,7 +96,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
+ <ThemeProvider>
+ <AuthProvider>
       <HelmetProvider>
       <RouterProvider router={router} />
 
@@ -113,5 +115,6 @@ createRoot(document.getElementById("root")).render(
         theme="light"
       />
     </AuthProvider>
+ </ThemeProvider>
   </StrictMode>
 );
