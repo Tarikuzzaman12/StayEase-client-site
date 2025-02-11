@@ -54,8 +54,8 @@ const AllRooms = () => {
             <Helmet>
                 <title>StayEase | All Rooms</title>
             </Helmet>
-            <div id='rooms'>
-                <h2 className="text-4xl text-center font-bold mt-10">All Rooms</h2>
+            <div id='rooms' className='dark:bg-black'>
+                <h2 className="text-4xl text-center font-bold pt-10 dark:text-gray-500">All Rooms</h2>
 
                 {loading && (
                     <div className="flex items-center justify-center h-screen">

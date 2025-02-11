@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../provider/AuthProvider";
+import ThemeToggle from "./ThemeToggle";
 
 const Navber = () => {
     const { user, signOutUser } = useContext(AuthContext);
@@ -77,7 +78,8 @@ const Navber = () => {
     );
 
     return (
-        <div className="navbar bg-primary text-white px-2 lg:px-4 sticky top-0 z-50">
+        <div className="navbar dark:bg-black  bg-primary text-white
+         dark:text-white px-2 lg:px-4 sticky top-0 z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -110,7 +112,9 @@ const Navber = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">{links}</ul>
             </div>
+        
             <div className="navbar-end flex items-center">
+                <ThemeToggle></ThemeToggle>
                 <Link className="text-[20px] flex items-center gap-1 mr-3 hover:text-blue-300 transition-colors duration-300">
                     {user && user.photoURL ? (
                         <img

@@ -27,8 +27,8 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="bg-gradient-to-r from-blue-100 via-white to-blue-100 py-12 px-6">
-      <div className="container mx-auto max-w-4xl bg-white p-8 rounded-lg shadow-lg">
+    <div id="contact" className=" dark:bg-black bg-gray-200 py-12 px-6">
+      <div className="container dark:bg-gray-900 dark:text-white mx-auto max-w-4xl bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-blue-700">
           Contact Us
         </h2>
@@ -38,7 +38,7 @@ const Contact = () => {
         </p>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-lg font-medium text-gray-700 mb-2">
+            <label className="block text-lg  font-medium text-gray-700 mb-2">
               Name
             </label>
             <input
@@ -48,7 +48,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               placeholder="Your Full Name"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-gray-700"
             />
           </div>
           <div>
@@ -62,7 +62,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               placeholder="Your Email Address"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-gray-700"
             />
           </div>
           <div>
@@ -76,7 +76,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               placeholder="Subject of Your Message"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-gray-700"
             />
           </div>
           <div>
@@ -89,7 +89,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               placeholder="Write your message here..."
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 h-32"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 h-32 dark:bg-gray-700"
             />
           </div>
           <button
