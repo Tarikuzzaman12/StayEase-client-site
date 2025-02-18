@@ -130,13 +130,13 @@ const Register = () => {
               Login
             </Link>
           </p>
-          <button
-            onClick={handleGoogleSignIn}
-            type="button"
-            className="btn btn-outline mt-4"
-          >
-            Sign in with Google
-          </button>
+           <button
+                                     type="button"
+                                     onClick={handleGoogleSignIn}
+                                     className="btn btn-outline mt-4 text-green-500 items-center"
+                                 >
+                                     <FcGoogle /> Sign in with Google
+                                 </button>
         </form>
       </div>
     </div>
