@@ -2,10 +2,10 @@ import React from 'react';
 
 const Nearby = () => {
     return (
-        <div>
-            <section className="bg-white py-12">
+        <div className='dark:bg-slate-800'>
+            <section className="bg-white dark:bg-slate-800 py-12">
                 <div className="max-w-7xl mx-auto px-6">
-                    <h2 className="text-3xl font-bold text-center mb-6">Explore Nearby Attractions</h2>
+                    <h2 className="text-3xl font-bold dark:text-gray-300 text-center mb-6">Explore Nearby Attractions</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Attraction 1 */}
                         <div className="border rounded-lg shadow-md overflow-hidden">
@@ -15,8 +15,8 @@ const Nearby = () => {
                                 className="w-full h-48 object-cover"
                             />
                             <div className="p-6">
-                                <h3 className="text-xl font-bold">Central Park</h3>
-                                <p className="text-gray-600 mt-2">
+                                <h3 className="text-xl dark:text-gray-300 font-bold">Central Park</h3>
+                                <p className="text-gray-600 dark:text-gray-400  mt-2">
                                     A beautiful urban park with scenic trails and relaxing greenery.
                                 </p>
                                 <p className="text-gray-500 mt-1">Distance: 2.5 km</p>
@@ -31,8 +31,8 @@ const Nearby = () => {
                                 className="w-full h-48 object-cover"
                             />
                             <div className="p-6">
-                                <h3 className="text-xl font-bold">City Museum</h3>
-                                <p className="text-gray-600 mt-2">
+                                <h3 className="text-xl dark:text-gray-300 font-bold">City Museum</h3>
+                                <p className="text-gray-600 dark:text-gray-400 mt-2">
                                     Discover the history and culture of the city through stunning exhibits.
                                 </p>
                                 <p className="text-gray-500 mt-1">Distance: 1.8 km</p>
@@ -47,8 +47,8 @@ const Nearby = () => {
                                 className="w-full h-48 object-cover"
                             />
                             <div className="p-6">
-                                <h3 className="text-xl font-bold">Ocean View Beach</h3>
-                                <p className="text-gray-600 mt-2">
+                                <h3 className="text-xl font-bold dark:text-gray-300">Ocean View Beach</h3>
+                                <p className="text-gray-600 mt-2 dark:text-gray-400">
                                     Relax by the shore and enjoy breathtaking ocean views.
                                 </p>
                                 <p className="text-gray-500 mt-1">Distance: 3.2 km</p>

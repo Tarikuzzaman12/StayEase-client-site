@@ -19,7 +19,7 @@ const Slider = () => {
   }, [images.length]);
 
   return (
-    <div className="relative">
+    <div className="relative dark:bg-gray-950">
       {/* Slider Section */}
       <div className="carousel w-full mt-8">
         {images.map((src, index) => (

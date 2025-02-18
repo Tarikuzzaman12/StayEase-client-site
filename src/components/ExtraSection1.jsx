@@ -3,14 +3,14 @@ import React from 'react';
 const ExtraSection1 = () => {
     return (
         <div>
-  <section className="bg-gray-50 py-10">
+  <section className="bg-gray-50 py-10 dark:bg-gray-950">
   <div className="w-full text-center">
-    <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Premium Amenities</h2>
-    <p className="text-gray-600 mb-10">
+    <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-300 mb-6">Our Premium Amenities</h2>
+    <p className="text-gray-600 dark:text-gray-400 mb-10">
       Experience the best-in-class facilities designed to make your stay unforgettable.
       From relaxation to recreation, we’ve got it all covered.
     </p>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8  w-full  px-6">
+    <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8  w-full  px-6">
       {[
         {
           icon: "📶",
@@ -45,15 +45,15 @@ const ExtraSection1 = () => {
       ].map((amenity, index) => (
         <div
           key={index}
-          className="p-6 bg-white shadow-lg rounded-lg transform transition-transform hover:scale-105"
+          className="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg transform transition-transform hover:scale-105"
         >
-          <div className="flex items-center justify-center mb-4">
+          <div className="flex items-center dark:bg-gray-800 justify-center mb-4">
             <span className="text-5xl text-blue-500">{amenity.icon}</span>
           </div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">
+          <h3 className="text-xl font-semibold dark:text-gray-300 text-gray-800 mb-2">
             {amenity.title}
           </h3>
-          <p className="text-gray-600 text-sm">{amenity.description}</p>
+          <p className="text-gray-600 dark:text-gray-400 text-sm">{amenity.description}</p>
         </div>
       ))}
     </div>

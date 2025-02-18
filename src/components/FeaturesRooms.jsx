@@ -32,14 +32,13 @@ const FeaturesRooms = () => {
     }
 
     return (
-        <div>
-            <h2 className="text-4xl text-center font-bold mt-20">Featured Rooms</h2>
+        <div className='dark:bg-gray-950'>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 w-full mx-auto p-8 gap-6">
                 {rooms?.map((room) => (
                     <RoomsCards key={room._id} room={room}></RoomsCards>
                 ))}
             </div>
-            <div className="flex items-center justify-center mt-4 mb-6">
+            <div className="flex items-center justify-center mt-4 pb-6">
                 <Link to={`/rooms`} className="btn text-lg btn-primary text-white border-none">
                     Show More Room Collections
                 </Link>

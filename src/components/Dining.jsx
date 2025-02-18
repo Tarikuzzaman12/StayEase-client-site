@@ -3,9 +3,9 @@ import React from "react";
 const Dining = () => {
   return (
     <div>
-      <section className="bg-gray-50 py-12">
+      <section className="bg-gray-50 dark:bg-slate-800 py-12">
         <div className="w-full mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-6">Dining Options</h2>
+          <h2 className="text-3xl font-bold dark:text-gray-200 text-center mb-6">Dining Options</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Restaurant 1 */}
             <div className="border rounded-lg shadow-md overflow-hidden">
@@ -15,8 +15,8 @@ const Dining = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold">The Gourmet Spot</h3>
-                <p className="text-gray-600 mt-2">
+                <h3 className="text-xl dark:text-gray-300 font-bold">The Gourmet Spot</h3>
+                <p className="text-gray-600 mt-2 dark:text-gray-400">
                   Fine dining with an international menu.
                 </p>
                 <a
@@ -36,8 +36,8 @@ const Dining = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold">Ocean Breeze Café</h3>
-                <p className="text-gray-600 mt-2">
+                <h3 className="text-xl font-bold dark:text-gray-300">Ocean Breeze Café</h3>
+                <p className="text-gray-600 mt-2 dark:text-gray-400">
                   Relaxed atmosphere with coastal favorites.
                 </p>
                 <a
@@ -57,8 +57,8 @@ const Dining = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold">Sunset Grille</h3>
-                <p className="text-gray-600 mt-2">
+                <h3 className="text-xl font-bold dark:text-gray-300">Sunset Grille</h3>
+                <p className="text-gray-600 dark:text-gray-400 mt-2">
                   Enjoy a romantic dinner with stunning sunset views.
                 </p>
                 <a

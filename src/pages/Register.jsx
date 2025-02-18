@@ -58,10 +58,10 @@ const Register = () => {
       <Helmet>
         <title>StayEase | Register</title>
       </Helmet>
-      <div className="hero bg-base-200 min-h-screen py-7">
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+      <div className="hero bg-base-200 min-h-screen dark:bg-slate-800  py-7">
+      <div className="card bg-base-100 dark:bg-slate-800 dark:border  w-full max-w-sm shrink-0 shadow-2xl">
         <form onSubmit={handleRegister} className="card-body">
-          <h1 className="text-5xl font-bold">Register now!</h1>
+          <h1 className="text-5xl font-bold  dark:bg-gray-400">Register now!</h1>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
@@ -70,7 +70,7 @@ const Register = () => {
               type="text"
               placeholder="Enter your name"
               name="name"
-              className="input input-bordered"
+              className="input input-bordered dark:bg-gray-600"
               required
             />
           </div>
@@ -82,7 +82,7 @@ const Register = () => {
               type="email"
               placeholder="Enter your email"
               name="email"
-              className="input input-bordered"
+              className="input input-bordered dark:bg-gray-600"
               required
             />
           </div>
@@ -94,7 +94,7 @@ const Register = () => {
               type="text"
               placeholder="Enter photo URL"
               name="photo"
-              className="input input-bordered"
+              className="input input-bordered dark:bg-gray-600"
             />
           </div>
           <div className="form-control relative">
@@ -124,7 +124,7 @@ const Register = () => {
               Register
             </button>
           </div>
-          <p className="text-center">
+          <p className="text-center dark:text-gray-400">
             Already have an account?{" "}
             <Link className="text-red-500" to="/login">
               Login

@@ -12,7 +12,7 @@ const OfferModal = ({ isOpen, closeModal }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2 relative">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2 relative">
         <button
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-lg"
           onClick={closeModal}
@@ -26,7 +26,7 @@ const OfferModal = ({ isOpen, closeModal }) => {
             alt="Special Offer"
             className="rounded-lg"
           />
-          <p className="text-center text-gray-700">
+          <p className="text-center text-gray-700 dark:text-gray-400">
             Grab up to <strong>50% Off</strong> on selected bookings. Don't miss out!
           </p>
           <button

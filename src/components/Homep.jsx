@@ -96,8 +96,8 @@ const Homep = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <section className="bg-gray-100 p-10">
-      <h2 className="text-3xl font-bold text-center mb-8">User Reviews</h2>
+    <section className="bg-gray-100 dark:bg-slate-800 p-10">
+      <h2 className="text-3xl font-bold text-center mb-8 dark:text-gray-200">User Reviews</h2>
       <Swiper
         spaceBetween={30}
         pagination={{ clickable: true }}
@@ -107,9 +107,9 @@ const Homep = () => {
       >
         {reviews.map((review) => (
           <SwiperSlide key={review._id}>
-            <div className="bg-white p-6 rounded-md shadow-lg text-center">
+            <div className="bg-white dark:bg-slate-800 dark:border-2  p-6 rounded-md shadow-lg text-center">
               {/* User's Name */}
-              <h3 className="text-xl font-semibold">{review.username}</h3>
+              <h3 className="text-xl dark:text-gray-200 font-semibold">{review.username}</h3>
               <p className="text-gray-500 text-sm">
               {new Date(review.timestamp).toLocaleString("en-US", {
                         month: "numeric",

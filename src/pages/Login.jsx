@@ -68,12 +68,12 @@ const Login = () => {
             <Helmet>
                 <title>StayEase | Login</title>
             </Helmet>
-            <div className="hero bg-base-200 min-h-screen">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="hero bg-base-200 dark:bg-slate-800 min-h-screen">
+            <div className="hero-content  flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left"></div>
-                <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <div className="card bg-base-100 dark:bg-slate-800 dark:border w-full max-w-sm shrink-0 shadow-2xl">
                     <form onSubmit={handleLogin} className="card-body">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
+                        <h1 className="text-5xl font-bold dark:text-gray-400">Login now!</h1>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -83,7 +83,7 @@ const Login = () => {
                                 placeholder="Enter your email"
                                 name="email"
                                 ref={emailRef}
-                                className="input input-bordered"
+                                className="input input-bordered  dark:bg-gray-600"
                                 required
                             />
                         </div>
@@ -95,7 +95,7 @@ const Login = () => {
                                 type={showPassword ? 'text' : 'password'}
                                 placeholder="Enter your password"
                                 name="password"
-                                className="input input-bordered"
+                                className="input input-bordered dark:bg-gray-600"
                                 required
                             />
                             <button
@@ -110,7 +110,7 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
-                        <p className="text-center">
+                        <p className="text-center dark:text-gray-400 ">
                             Don't have an account?{' '}
                             <Link className="text-red-500" to="/register">
                                 Register
