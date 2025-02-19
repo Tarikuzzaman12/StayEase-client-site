@@ -13,10 +13,10 @@ const RoomsCards = ({ room }) => {
                     />
                 </figure>
                 <div className="card-body h-[340px]">
-                    <h2 className="text-2xl font-bold">{title}</h2>
+                    <h2 className="text-2xl font-bold dark:text-gray-400">{title}</h2>
                     <p className="text-lg text-gray-500 font-medium">Room Size: {roomSize}</p>
                     <p className="text-lg text-gray-500 font-medium">
-                        Price Per Night: <span className="text-gray-900 font-semibold">${pricePerNight}</span>
+                        Price Per Night: <span className="text-gray-900 font-semibold"><span className='dark:text-gray-400'>${pricePerNight}</span></span>
                     </p>
                     <p className="text-sm text-gray-700">{description}</p>
                     <div className="card-actions mt-4">

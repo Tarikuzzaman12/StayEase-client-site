@@ -60,7 +60,7 @@ const RoomDetails = () => {
       <Helmet>
         <title>StayEase | Details</title>
       </Helmet>
-      <div className="p-6 container mx-auto">
+      <div className="p-6 container mx-auto dark:bg-slate-800">
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           {/* Room Image */}
           <div className="lg:w-1/2">
@@ -73,13 +73,13 @@ const RoomDetails = () => {
 
           {/* Room Details */}
           <div className="lg:w-1/2">
-            <h1 className="text-3xl font-bold text-gray-800">{room.title}</h1>
-            <p className="text-gray-600 mt-3">{room.description}</p>
+            <h1 className="text-3xl font-bold dark:text-gray-400 text-gray-800">{room.title}</h1>
+            <p className="text-gray-600 mt-3 dark:text-gray-400">{room.description}</p>
             <p className="mt-4">
-              <span className="font-semibold">Area:</span> {room.roomSize || "N/A"}
+              <span className="font-semibold dark:text-gray-400">Area:</span> <span className="dark:text-gray-400">{room.roomSize || "N/A"}</span>
             </p>
             <p>
-              <span className="font-semibold">Availability:</span>{" "}
+              <span className="font-semibold dark:text-gray-400 ">Availability:</span>{" "}
               {room.availability ? (
                 <span className="text-green-500">Available</span>
               ) : (
@@ -87,8 +87,8 @@ const RoomDetails = () => {
               )}
             </p>
             <p className="text-lg mt-4">
-              <span className="font-semibold">Price:</span> $
-              {room.pricePerNight} <span className="text-sm">/ Night</span>
+              <span className="font-semibold dark:text-gray-400">Price:</span> <span className="dark:text-gray-400">$</span>
+              <span className="dark:text-gray-400">{room.pricePerNight}</span> <span className="text-sm dark:text-gray-400">/ Night</span>
             </p>
 
             {room.specialOffer && (
@@ -113,7 +113,7 @@ const RoomDetails = () => {
 
         {/* Reviews Section */}
         <div>
-          <h2 className="text-center text-4xl font-semibold mt-8 mb-6">
+          <h2 className="text-center  dark:text-gray-400 text-4xl font-semibold mt-8 mb-6">
             User Reviews For this Room
           </h2>
           <div className="w-8/12 mx-auto p-6">
@@ -124,7 +124,7 @@ const RoomDetails = () => {
                   .map((review) => (
                     <div
                       key={review._id}
-                      className="bg-base-100 border-2 shadow-lg p-4 rounded-md"
+                      className="bg-base-100 border-2 shadow-lg p-4 rounded-md dark:bg-gray-600"
                     >
                       <div className="card-body text-center">
                         <h2 className="card-title font-bold">{review.username}</h2>

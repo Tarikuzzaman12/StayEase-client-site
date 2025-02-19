@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
   const { createNewUser, googleSignIn, setUser, updateUserProfile } =
@@ -61,7 +62,7 @@ const Register = () => {
       <div className="hero bg-base-200 min-h-screen dark:bg-slate-800  py-7">
       <div className="card bg-base-100 dark:bg-slate-800 dark:border  w-full max-w-sm shrink-0 shadow-2xl">
         <form onSubmit={handleRegister} className="card-body">
-          <h1 className="text-5xl font-bold  dark:bg-gray-400">Register now!</h1>
+          <h1 className="text-5xl font-bold  dark:text-gray-400">Register now!</h1>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
@@ -105,7 +106,7 @@ const Register = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Enter your password"
               name="password"
-              className="input input-bordered"
+              className="input input-bordered dark:bg-gray-600"
               required
             />
             <button

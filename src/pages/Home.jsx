@@ -36,7 +36,7 @@ const Home = () => {
       <div>
         <Homep />
       </div>
-      <div className="my-[100px] w-11/12 mx-auto">
+    <div>
       <Map />
         </div>
 
