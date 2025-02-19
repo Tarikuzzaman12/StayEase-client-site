@@ -92,7 +92,7 @@ const RoomDetails = () => {
             </p>
 
             {room.specialOffer && (
-              <div className="mt-4 bg-yellow-50 p-4 rounded-lg border border-yellow-300">
+              <div className="mt-4 bg-yellow-50 p-4 rounded-lg border border-yellow-500">
                 <h3 className="text-lg font-semibold text-yellow-700">
                   {room.specialOffer.offerTitle}
                 </h3>

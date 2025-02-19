@@ -18,7 +18,7 @@ const RoomsCards = ({ room }) => {
                     <p className="text-lg text-gray-500 font-medium">
                         Price Per Night: <span className="text-gray-900 font-semibold"><span className='dark:text-gray-400'>${pricePerNight}</span></span>
                     </p>
-                    <p className="text-sm text-gray-700">{description}</p>
+                    <p className="text-sm text-gray-700  dark:text-gray-500">{description}</p>
                     <div className="card-actions mt-4">
                         <button className="btn btn-primary w-full">Book Now</button>
                     </div>

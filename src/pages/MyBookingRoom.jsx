@@ -102,10 +102,10 @@ const MyBookingRoom = () => {
       <Helmet>
         <title>StayEase | Booking-Rooms</title>
       </Helmet>
-      <div className="container mx-auto p-8 h-screen">
-        <h1 className="text-3xl text-center font-bold mb-10">My Bookings</h1>
+      <div className="container mx-auto p-8 h-screen dark:bg-slate-800">
+        <h1 className="text-3xl text-center font-bold mb-10 dark:text-gray-400">My Bookings</h1>
         {bookings.length === 0 ? (
-          <p className="h-screen text-center items-center justify-center flex text-3xl font-bold">
+          <p className="h-screen text-center items-center justify-center  dark:text-gray-400  flex text-3xl font-bold">
             No bookings found.
           </p>
         ) : (
@@ -113,18 +113,18 @@ const MyBookingRoom = () => {
             <table className="table-auto w-full border-collapse border border-gray-200">
               <thead>
                 <tr className="bg-gray-100">
-                  <th className="border border-gray-300">#</th>
-                  <th className="border border-gray-300 p-2">Room Image</th>
-                  <th className="border border-gray-300 p-2">Room Title</th>
-                  <th className="border border-gray-300 p-2">Price</th>
-                  <th className="border border-gray-300 p-2">Booking Date</th>
-                  <th className="border border-gray-300 p-2">Actions</th>
+                  <th className="border border-gray-300 dark:bg-slate-800  dark:text-gray-400">#</th>
+                  <th className="border border-gray-300 dark:bg-slate-800  dark:text-gray-400 p-2">Room Image</th>
+                  <th className="border border-gray-30 dark:bg-slate-800  dark:text-gray-400 p-2">Room Title</th>
+                  <th className="border border-gray-300 dark:bg-slate-800  dark:text-gray-400 p-2">Price</th>
+                  <th className="border border-gray-300 dark:bg-slate-800  dark:text-gray-400 p-2">Booking Date</th>
+                  <th className="border border-gray-300 dark:bg-slate-800  dark:text-gray-400 p-2">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {bookings.map((booking, index) => (
                   <tr key={index} className="hover:bg-gray-50">
-                    <td className="border border-gray-300 p-2 text-center">{index + 1}</td>
+                    <td className="border border-gray-300 p-2 dark:text-gray-400 text-center">{index + 1}</td>
                     <td className="border border-gray-300 p-2 text-center">
                       <img
                         src={booking.roomImage || "https://via.placeholder.com/400"}
@@ -132,9 +132,9 @@ const MyBookingRoom = () => {
                         className="h-16 w-16 object-cover mx-auto"
                       />
                     </td>
-                    <td className="border border-gray-300 text-center p-2">{booking.roomTitle}</td>
-                    <td className="border border-gray-300  text-center  p-2">${booking.offerPrice}</td>
-                    <td className="border border-gray-300  text-center p-2">
+                    <td className="border border-gray-300 text-center  dark:text-gray-400 p-2">{booking.roomTitle}</td>
+                    <td className="border border-gray-300  text-center  dark:text-gray-400  p-2">${booking.offerPrice}</td>
+                    <td className="border border-gray-300  dark:text-gray-400  text-center p-2">
                       {new Date(booking.bookingDate).toLocaleDateString()}
                     </td>
                     <td className="border border-gray-300 p-2 text-center space-x-2">
